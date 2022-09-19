@@ -26,7 +26,9 @@ time, mark, audio, video {
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+	display: inline-block;
+    text-align: center;
+    
 }
 body {
 	line-height: 1;
@@ -49,6 +51,7 @@ table {
 
 * {
     box-sizing: border-box;
+    max-width: 1920px;
 }
 
 html {
@@ -61,10 +64,13 @@ html {
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.5;
+    margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6, p, a, i {
     text-decoration: none;
+    color: whitesmoke;
+    justify-content: space-evenly;
 }
 
 h1 {
@@ -93,6 +99,13 @@ header {
     background-repeat: no-repeat;
 }
 
+.link {
+    display:block;
+    justify-content:space-evenly;
+    align-items: center;
+    background-color:rgb(0, 4, 17, .8);
+}
+
 /* spacers */
 .spacer {
     width: 100%;
@@ -111,6 +124,24 @@ header {
     height: 100vh;
     text-align: center;
     background-color: rgb(0, 4, 17);
+}
+.image-grid {
+    --gap:50px;
+    --num-cols: 3;
+    --row-hight: 300px;
+
+    box-sizing: border-box;
+    padding: var(--gap);
+
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols), 2fr);
+    grid-auto-rows: var(--row-hight);
+    gap: var(--gap);
+}
+.image-grid > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* about us section */
@@ -194,6 +225,31 @@ footer {
     height: 15vh;
     padding-top: 2.5vh;
     font-size: 3rem;
+    background-color: rgb(134, 22, 22);
+    top: 0px;
+    right: 0px;
+    display: flex;
+    
+}
+
+.footer {
+    background-color: rgb(45, 45, 110);
+}
+.footerlink{
+    display:block;
+    justify-content:space-evenly;
+    align-items: center;
+    background-color: aqua;
+
+}
+.copyright {
+    background-color: black;
+    text-align: right;
+    margin-right: 10%;
+    justify-content: flex-start;
+    font-size: 5rem;
+   
+
 }
 
 /* mobile media query */
@@ -204,6 +260,10 @@ footer {
     /* gallery section */
     .gallery {
         height: auto;
+    }
+    .image-grid{
+        --num--cols: 2;
+        --row-height:200px;
     }
     
     /* about us section */
